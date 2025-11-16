@@ -11,17 +11,17 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
+variables:
+  buildConfiguration: 'Release'
+
+steps:
 - task: UseDotNet@2
   displayName: 'Install .NET Core SDK'
   inputs:
     version: 10.x
     performMultiLevelLookup: true
-    installationPath: 'C:\Program Files\dotnet`
+    installationPath: 'C:\Program Files\dotnet'
 
-variables:
-  buildConfiguration: 'Release'
-
-steps:
 - task: GetRevision@1
   displayName: 'Get Revision'
   inputs:
